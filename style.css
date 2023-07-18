@@ -757,7 +757,7 @@ input[type='range']::-webkit-slider-thumb {
     }
 
     .container-memes {
-        width: 70%;
+        width: 65%;
     }
 
     .aside-imagen {
@@ -806,8 +806,8 @@ input[type='range']::-webkit-slider-thumb {
     }
 
     .main {
-        height: 79%;
-        justify-content:flex-start ;
+        height: 100%;
+        justify-content:space-evenly ;
     }
 
     .aside-imagen {

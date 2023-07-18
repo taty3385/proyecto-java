@@ -72,9 +72,9 @@ const mostrarImg = () => {
 
 // aside texto--------------------------------
 const botonText = document.getElementById('list-text');
-console.log(botonText);
+
 const asideText = document.getElementById('modo-claro-aside-text');
-console.log(asideText)
+
 
 botonText.addEventListener('click', () => ocultarText());
 
@@ -88,13 +88,13 @@ const ocultarText = () => {
 
 // // modo Oscuro------------------------------------
 const botonOscuro = document.getElementById('list-oscuro');
-console.log(botonOscuro);
+
 const header = document.getElementById('modo-claro-header');
-console.log(header)
+
 const main = document.getElementById('modo-claro-main');
-console.log(main)
+
 botonOscuro.addEventListener('click', () => modoOscuro());
-console.log(botonOscuro)
+
 const modoOscuro = () => {
     header.classList.toggle('modo-claro-header');
     main.classList.toggle('modo-claro-main');
@@ -106,30 +106,30 @@ const modoOscuro = () => {
     if (header.classList.contains('modo-claro-header')) {
         botonOscuro.innerText = " 🌅Modo claro";
     } else {
-        botonOscuro.innerText = "Modo Oscuro";
+        botonOscuro.innerHTML = '<i class="fa-regular fa-lightbulb icon"></i> Modo oscuro';
     }
 
 }
 
 // boton color-------------------------------
 const inputColor1 = document.getElementById('fondo-img');
-console.log(inputColor1)
+
 const inputColor2 = document.getElementById('colour')
-console.log(inputColor2)
+
 const inputColor3 = document.getElementById('found')
-console.log(inputColor3)
+
 
 const spanColor = document.getElementsByClassName('span-colour')
-console.log(spanColor)
+
 
 
 const color = () => {
     let colorSeleccionado1 = inputColor1.value;
-    console.log(colorSeleccionado1)
+
     let colorSeleccionado2 = inputColor2.value;
-    console.log(colorSeleccionado2)
+
     let colorSeleccionado3 = inputColor3.value;
-    console.log(colorSeleccionado3)
+
     spanColor[0].innerHTML = `${colorSeleccionado1}`
     spanColor[1].innerHTML = `${colorSeleccionado2}`
     spanColor[2].innerHTML = `${colorSeleccionado3}`
@@ -151,9 +151,9 @@ inputColor1.addEventListener('input', () => cambioColorFondo())
 
 // cambio de fuentes------------------------------------
 const textSuperior = document.getElementById('toptext');
-console.log(textSuperior)
+
 const textInferior = document.getElementById('botomtext');
-console.log(textInferior);
+
 
 const colorFuentes = () => {
     textSuperior.style.color = `${inputColor2.value}`
@@ -181,7 +181,7 @@ const text = () => {
 }
 
 inpuSuperior.addEventListener("input", () => text());
-console.log(inpuSuperior)
+
 inpuInferior.addEventListener("input", () => text());
 
 
@@ -194,7 +194,7 @@ const fuente = () => {
     textInferior.style.fontFamily = `${fontFamily.value}`
 }
 fontFamily.addEventListener("change", () => fuente());
-console.log(fontFamily);
+
 
 // cambio de select
 
@@ -209,7 +209,7 @@ inputFondo.addEventListener("change", () => blendMolde());
 // checked 
 
 const chekedTexSup = document.getElementById('checkeo');
-console.log(chekedTexSup)
+
 
 const chekedTexinfe = document.getElementById('checked-2');
 
@@ -217,16 +217,11 @@ const chekedTexinfe = document.getElementById('checked-2');
 const chekin = () => {
     if (chekedTexSup.checked) {
         textSuperior.classList.add("hidden");
-
-
+        textInferior.classList.remove('hidden');
     } else {
-        textSuperior.classList.remove("hidden");
-
     } if (chekedTexinfe.checked) {
         textInferior.classList.add('hidden');
-
-    } else {
-        textInferior.classList.remove('hidden');
+        textSuperior.classList.remove("hidden");
     }
 
 }
@@ -236,7 +231,7 @@ chekedTexinfe.addEventListener("change", () => chekin());
 // button centrado
 
 const left = document.getElementById('left');
-console.log(left)
+
 const center = document.getElementById('center');
 const right = document.getElementById('right');
 
@@ -261,7 +256,7 @@ right.addEventListener("click", () => rightTex());
 // espaciado
 
 const espaciado = document.getElementById("number");
-console.log(espaciado)
+
 
 
 const espaciadoText = () => {
@@ -285,7 +280,7 @@ const interllineadoText = () => {
 
 // botones box shadow
 const buttonNone = document.getElementById('button-outline');
-console.log(buttonNone)
+
 
 buttonNone.addEventListener("click", () => botonNone());
 
@@ -298,7 +293,7 @@ const botonNone = () => {
 // buttton dark-------------------------------
 
 const buttondark = document.getElementById('button-outline3');
-console.log(buttondark);
+
 
 const botonDark = () => {
 
@@ -309,7 +304,7 @@ buttondark.addEventListener("click", () => botonDark());
 
 // button light---------------------
 const buttonlight = document.getElementById('button-outline2');
-console.log(buttonlight)
+
 
 const botonlight = () => {
     textSuperior.style.textShadow = '2px 2px 10px pink';
@@ -341,7 +336,7 @@ const downloadMeme = () => {
 };
 
 const tamaño = document.getElementById('number-icon');
-console.log(tamaño)
+
 
 const tamañoFuente = () => {
     textSuperior.style.fontSize = `${tamaño.value}px `;
@@ -358,7 +353,11 @@ console.log(tranparente)
 const tranparerenteCheked = () => {
     if (tranparente.checked) {
         textSuperior.style.backgroundColor = 'transparent';
+        textSuperior.style.zIndex= 1 
         textInferior.style.backgroundColor = 'transparent';
+        textInferior.style.zIndex= 1
+        textSuperior.style.color= 'white';
+        textInferior.style.color='white';
         meme.style.position = 'relative';
         textSuperior.style.position = 'absolute';
         textInferior.style.position = 'absolute';
@@ -370,6 +369,8 @@ const tranparerenteCheked = () => {
         textInferior.style.backgroundColor = '#ffffff';
         textSuperior.style.position = 'static';
         textInferior.style.position = 'static';
+        textSuperior.style.color= 'black';
+        textInferior.style.color= 'black';
 
 
     }
@@ -381,30 +382,15 @@ tranparente.addEventListener('input', () => tranparerenteCheked());
 // restabecer filtros
 
 const rese = document.getElementById('reset');
-console.log(rese)
-const restablecerFiltros = () => {
-    brightInput.value=1;
-    contraste.value= 100;
-    opacidad.value= 1;
-    desenfoque.value= 1;
-    escalaEscalaGrices.value= 0;
-    sepia.value= 0;
-    hue.value= 0;
-    saturacion.value= 100;
-    negativo.value= 0;
 
-}
+rese.addEventListener('click', () => filtros());
 
-
-
-rese.addEventListener('click', () => restablecerFiltros());
-console.log(rese)
 
 
 // boton aside text
 
 const botonCerrar = document.getElementById('fa-mark');
-console.log(botonCerrar)
+
 const botonCerrartex = document.getElementById('fa-xmark-text');
 
 const cerrar = () => {
@@ -416,18 +402,18 @@ botonCerrar.addEventListener('click', () => cerrar());
 botonCerrartex.addEventListener('click', () => cerrar());
 // ------------------------------------------------------------
 
-// const resizeWindow = () => {
+const resizeWindow = () => {
 
-//     if (document.body.getBoundingClientRect().width < 1024) {
-//         //    si la condicion se cumple se ejecuta este codigo
-//         asideImage.classList.add('hidden');
-//         asideText.classList.add('hidden');
+    if (document.body.getBoundingClientRect().width < 1024) {
+        //    si la condicion se cumple se ejecuta este codigo
+        asideImage.classList.add('hidden');
+        asideText.classList.add('hidden');
 
-//         console.log('la condicion se cumple')
 
-//     }
-// }
-// window.addEventListener("resize", resizeWindow)
+
+    }
+}
+window.addEventListener("resize", resizeWindow)
 
 
 

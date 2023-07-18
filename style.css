@@ -719,10 +719,6 @@ input[type='range']::-webkit-slider-thumb {
         flex-grow: 1;
     }
 
-    .container-memes {
-
-        margin: 16px
-    }
 
     .title {
         height: 16%;

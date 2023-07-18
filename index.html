@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/60c801c4ee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- header  -->
+    <!-- <div class="father-container"> -->
+    <div class="header-container">
+        <header id="modo-claro-header" class="headers">
+            <h1 class="header-title">Generador de Memes</h1>
+            <div class="container-list">
+
+                <button type="button" id="list-image" class="list  ">
+                    <i class="fa-regular fa-image icon"></i>
+                    Imagen</button>
+
+                <button id="list-text" class="list">
+                    <i class="fa-solid fa-font icon"></i>
+                    texto
+
+                </button>
+
+
+                <button id="list-oscuro" class="list">
+                    <i class="fa-regular fa-lightbulb icon"></i>
+                    Modo oscuro
+
+                    </buttom>
+
+            </div>
+        </header>
+        <!-- end of the body main -->
+        <main class="main" id="modo-claro-main">
+            <div id="meme" class="container-memes">
+                <h2 id="toptext" class="title top">TOP TEXT</h2>
+                <div id="container-meme" class="container-image"></div>
+                <h2 id="botomtext" class="title botton">BOTTOM TEXT</h2>
+            </div>
+            <button type="button" id="descarga-Button" class="container-button">
+                <i class="fas fa-download button-icon-text"></i>
+                <p class="text-button">
+                    Descarga de meme
+                </p>
+            </button>
+        </main>
+    </div>
+
+
+
+    <!-- this is the aside image -->
+    <aside id="modo-claro-aside-image" class="aside-imagen container">
+        <form id="image">
+            <div class="container-icon-fa-mark">
+                <button id="fa-mark" type="button" class="icon-aside-text">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <h3 class="title-text">Imagen</h3>
+            <div class="container-url  container">
+                <label class="label" for="url">URL </label>
+                <input class="url" id="url" type="url">
+            </div>
+
+            <div class="container-colour container">
+                <div class="container-colour-found">
+                    <label for="fondo-img">Fondo </label>
+                    <div class="box-input">
+                        <div class="container-input">
+                            <input class="colour" id="fondo-img" type="color" value="000">
+                            <span class="span-colour">
+                                #000000</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container-select ">
+                    <label for="select-matiz"></label>
+                    <select class="matiz" id="select-matiz">
+                        <option class="unset" value="">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+
+                </div>
+            </div>
+            <h3 class="container-title-filtro "> Filtros</h3>
+            <div class="container-range container">
+                <label class="range" for="brightness">BRILLO</label>
+                <div>
+                    <input type="range" min="0" max="1" value="1" step="0.1" id="brightness" class="bar">
+                </div>
+
+            </div>
+            <div class="container-filtro">
+                <div class="container-range container">
+                    <label class="range" for="opacity">OPACIDAD
+                        <div>
+                            <input id="opacity" class="bar" type="range" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range container">
+                    <label class="range" for="contrast">CONTRASTE
+                        <div>
+                            <input id="contrast" class="bar" type="range" min="100" max="1000" step="1" value="100">
+                        </div>
+                    </label>
+                </div>
+
+
+                <div class="container-range container">
+                    <label class="range" for="blur">DESENFOQUE
+                        <div>
+                            <input id="blur" class="bar" type="range" min="0" max="10" step="0'1" value="1">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range">
+                    <label class="range" for="grayscale">ESCALA DE GRISES
+                        <div>
+                            <input id="grayscale" class="bar" type="range" min="0" max="100" step="1" value="0">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range contaner">
+                    <label class="range" for="sepia">SEPIA
+                        <div>
+                            <input id="sepia" class="bar" type="range" min="0" max="100" step="1" value="0">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range container">
+                    <label class="range" for="hue-rotation">HUE
+                        <div>
+                            <input id="hue-rotation" class="bar" type="range" min="0" max="359" step="1" value="0">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range container">
+                    <label class="range" for="saturation">SATURADO
+                        <div>
+                            <input id="saturation" class="bar" type="range" min="100" max="1000" step="10" value="100">
+                        </div>
+                    </label>
+                </div>
+                <div class="container-range container">
+                    <label class="range" for="invert">NEGATIVO
+                        <div>
+                            <input id="invert" class=" bar" type="range" min="0" max="1" step="0.1" value="0">
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <button id="reset" type="reset" class="container-button-aside">
+                <p class="button-text">Restablecer Filtros</p>
+            </button>
+        </form>
+
+    </aside>
+    <!-- this is  the aside  text -->
+
+    <aside id="modo-claro-aside-text" class="aside-text hidden">
+
+        <form id="text">
+            <div class="container-icon-fa-mark">
+                <button id="fa-xmark-text" type="button" class="icon-aside-text">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <h3 class="title-text">Texto</h3>
+
+            <h4 class="title-mensagge">Superior</h4>
+            <label for="superior">
+                <textarea class="superior" id="superior" cols="30" rows="10" placeholder="Top text"></textarea>
+            </label>
+
+
+
+
+            <div class="container-checked">
+                <input class="checked" id="checkeo" type="checkbox" value="Sin texto superior">
+                <label class="title-checked" for="checkeo"> Sin texto superior</label>
+            </div>
+
+            <div>
+                <h4 class="title-mensagge">Inferior</h4>
+                <label for="mensagge-2">
+                    <textarea class="inferior" id="mensagge-2" cols="30" rows="10" placeholder="BOTTOM TEXT"></textarea>
+                </label>
+
+            </div>
+
+            <div class="container-checked">
+                <input id="checked-2" type="checkbox">
+                <label class="title-checked" for="checked-2">Sin texto inferior </label>
+            </div>
+            <label for="select">
+                <h3 class="title-select">Interlineado</h3>
+                <select class="matiz" id="select">
+                    <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">impact</option>
+                    <option value="Arial, Helvetica, sans-serif">arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="comic Sans Ms">comic Sans Ms</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact</option>
+                    <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
+                    <option value="Times New Roman', Times, serif">Times New Roman</option>
+                </select>
+            </label>
+            <div class="container-fuente">
+                <div class="container-number">
+                    <label for="number-icon">
+                        <input class="number-icon" id="number-icon" type="number" value="16">
+                    </label>
+                </div>
+                <div class="container-button2">
+                    <button type="button" class="left button" id="left">
+                        <i class="fa-solid fa-align-left"></i>
+                    </button>
+                    <button type="button" class="justify  button" id="center">
+                        <i class="fa-solid fa-align-justify"></i>
+                    </button>
+                    <button type="button" class="rigth button" id="right">
+                        <i class="fa-solid fa-align-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="container-colour2">
+                <div class="container-colour-found">
+                    <label class="title-colour" for="colour"> color</label>
+                    <div class="box-input">
+                        <div class="container-input">
+                            <input class="colour" id="colour" type="color">
+                            <span class="span-colour">
+                                #000000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-colour-found">
+                    <label class="title-found" for="found"> fondo </label>
+                    <div class="box-input">
+                        <div class="container-input">
+                            <input class="colour" id="found" type="color">
+                            <span class="span-colour">
+                                #000000</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-checked">
+                <input id="checked-3" type="checkbox" value="">
+                <label class="title-checked" for="checked-3"> Fondo transparente</label>
+            </div>
+            <div class="container-outline">
+                <button type="button" class="button-outline" id="button-outline">
+                    Ninguno
+                </button>
+                <button type="button" class="button-outline" id="button-outline2">
+                    Claro
+                </button>
+                <button type="button" class="button-outline" id="button-outline3">
+                    Oscuro
+                </button>
+            </div>
+            <label for="number">
+                <h3 class="title-select">Espaciado</h3>
+                <input class="number" id="number" type="number" min="0" max="50 " value="5">
+            </label>
+
+            <label for="Interlineado"> </label>
+            <h3 class="title-select">Interlineado</h3>
+            <select id="Inter" class="matiz  Interlineado">
+                <option value="0.8">0.8</option>
+                <option value="1">1</option>
+                <option value="1.2">1.2</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+            </select>
+        </form>
+
+    </aside>
+
+    <script src="script.js"></script>
+</body>

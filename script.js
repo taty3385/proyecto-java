@@ -12,11 +12,9 @@ const changeBackground = () => {
 }
 inputImagen.addEventListener('input', () => changeBackground())
 
-// cambio de texto
 
-// const tituloSuperior=document.getElementById('mensagge')
-// console.log(tituloSuperior)
-// const
+
+
 
 
 // filtro
@@ -361,16 +359,19 @@ const tranparerenteCheked = () => {
     if (tranparente.checked) {
         textSuperior.style.backgroundColor = 'transparent';
         textInferior.style.backgroundColor = 'transparent';
-        meme.style.position= 'relative';
+        meme.style.position = 'relative';
         textSuperior.style.position = 'absolute';
-        textInferior.style.position= 'absolute';
-        textSuperior.style.top= "0";
-        textInferior.style.bottom= "0";
+        textInferior.style.position = 'absolute';
+        textSuperior.style.top = "0";
+        textInferior.style.bottom = "0";
 
     } else {
         textSuperior.style.backgroundColor = '#ffffff';
         textInferior.style.backgroundColor = '#ffffff';
-       
+        textSuperior.style.position = 'static';
+        textInferior.style.position = 'static';
+
+
     }
 
 }
@@ -381,9 +382,22 @@ tranparente.addEventListener('input', () => tranparerenteCheked());
 
 const rese = document.getElementById('reset');
 console.log(rese)
+const restablecerFiltros = () => {
+    brightInput.value=1;
+    contraste.value= 100;
+    opacidad.value= 1;
+    desenfoque.value= 1;
+    escalaEscalaGrices.value= 0;
+    sepia.value= 0;
+    hue.value= 0;
+    saturacion.value= 100;
+    negativo.value= 0;
+
+}
 
 
-rese.addEventListener('click', () => filtros());
+
+rese.addEventListener('click', () => restablecerFiltros());
 console.log(rese)
 
 
@@ -402,21 +416,18 @@ botonCerrar.addEventListener('click', () => cerrar());
 botonCerrartex.addEventListener('click', () => cerrar());
 // ------------------------------------------------------------
 
-const resizeWindow = () => {
-    
-    if (document.body.getBoundingClientRect().width < 1024) {
-    //    si la condicion se cumple se ejecuta este codigo
-    asideImage.classList.add('hidden');
-    asideText.classList.add('hidden');
-    
-       console.log('la condicion se cumple')
-    } else {
-        // si a condicion no se cumle se ecuta esta funcion
-       asideImage.classList.toggle
-        console.log('la ejecucion no se cumple')
-    }
-}
-window.addEventListener("resize", resizeWindow)
+// const resizeWindow = () => {
+
+//     if (document.body.getBoundingClientRect().width < 1024) {
+//         //    si la condicion se cumple se ejecuta este codigo
+//         asideImage.classList.add('hidden');
+//         asideText.classList.add('hidden');
+
+//         console.log('la condicion se cumple')
+
+//     }
+// }
+// window.addEventListener("resize", resizeWindow)
 
 
 

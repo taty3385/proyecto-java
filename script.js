@@ -358,8 +358,9 @@ const tranparerenteCheked = () => {
         textInferior.style.backgroundColor = 'transparent';
         textSuperior.style.color = 'white';
         textInferior.style.color = 'white';
-
-        textSuperior.style.position = 'absolute';
+        textSuperior.style.zIndex = 1
+        textInferior.style.zIndex = 1
+            textSuperior.style.position = 'absolute';
         textInferior.style.position = 'absolute';
         textSuperior.style.top = "0";
         textInferior.style.bottom = "0";
@@ -369,6 +370,9 @@ const tranparerenteCheked = () => {
         textInferior.style.backgroundColor = '#ffffff';
         textSuperior.style.position = 'static';
         textInferior.style.position = 'static';
+        textSuperior.style.color= 'black';
+        textInferior.style.color= 'black';
+
     }
 
 }

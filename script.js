@@ -2,27 +2,17 @@
 const inputImagen = document.getElementById('url')
 const img = document.getElementById('container-meme');
 
-console.log(img);
-console.log(inputImagen);
-
-
 const changeBackground = () => {
     img.style.backgroundImage = `url('${inputImagen.value}')`
-    console.log('hola')
+
 }
 inputImagen.addEventListener('input', () => changeBackground())
 
 
-
-
-
-
-// filtro
+// filtro--------------------------------------------------------------
 
 const brightInput = document.getElementById('brightness');
-console.log(brightInput)
 const opacidad = document.getElementById('opacity');
-
 const contraste = document.getElementById('contrast');
 const desenfoque = document.getElementById('blur');
 const escalaEscalaGrices = document.getElementById('grayscale');
@@ -51,9 +41,8 @@ negativo.addEventListener('input', () => filtros());
 // aside image-----------------------------------
 
 const botonImagen = document.getElementById('list-image');
-console.log(botonImagen);
 const asideImage = document.getElementById('modo-claro-aside-image');
-console.log(asideImage);
+
 
 botonImagen.addEventListener('click', () => ocultarImg());
 
@@ -62,7 +51,7 @@ const ocultarImg = () => {
     asideImage.classList.remove('hidden');
 }
 botonImagen.addEventListener('click', () => mostrarImg());
-console.log(botonImagen)
+
 const mostrarImg = () => {
     botonImagen.classList.add = ('panel')
 }
@@ -72,7 +61,6 @@ const mostrarImg = () => {
 
 // aside texto--------------------------------
 const botonText = document.getElementById('list-text');
-
 const asideText = document.getElementById('modo-claro-aside-text');
 
 
@@ -88,9 +76,7 @@ const ocultarText = () => {
 
 // // modo Oscuro------------------------------------
 const botonOscuro = document.getElementById('list-oscuro');
-
 const header = document.getElementById('modo-claro-header');
-
 const main = document.getElementById('modo-claro-main');
 
 botonOscuro.addEventListener('click', () => modoOscuro());
@@ -113,21 +99,15 @@ const modoOscuro = () => {
 
 // boton color-------------------------------
 const inputColor1 = document.getElementById('fondo-img');
-
 const inputColor2 = document.getElementById('colour')
-
 const inputColor3 = document.getElementById('found')
-
-
 const spanColor = document.getElementsByClassName('span-colour')
 
 
 
 const color = () => {
     let colorSeleccionado1 = inputColor1.value;
-
     let colorSeleccionado2 = inputColor2.value;
-
     let colorSeleccionado3 = inputColor3.value;
 
     spanColor[0].innerHTML = `${colorSeleccionado1}`
@@ -209,8 +189,6 @@ inputFondo.addEventListener("change", () => blendMolde());
 // checked 
 
 const chekedTexSup = document.getElementById('checkeo');
-
-
 const chekedTexinfe = document.getElementById('checked-2');
 
 
@@ -230,10 +208,9 @@ const chekin = () => {
 chekedTexSup.addEventListener("change", () => chekin());
 chekedTexinfe.addEventListener("change", () => chekin());
 
-// button centrado
+// button centrado-----------------------
 
 const left = document.getElementById('left');
-
 const center = document.getElementById('center');
 const right = document.getElementById('right');
 
@@ -255,11 +232,9 @@ const rightTex = () => {
 }
 right.addEventListener("click", () => rightTex());
 
-// espaciado
+// espaciado---------------------------------------
 
 const espaciado = document.getElementById("number");
-
-
 
 const espaciadoText = () => {
     textSuperior.style.padding = `${espaciado.value}px`;
@@ -316,17 +291,10 @@ buttonlight.addEventListener("click", () => botonlight());
 
 
 
-
-
-
-
-
-// descarga meme
+// descarga meme----------------------------------
 
 const descargaButton = document.getElementById("descarga-Button");
 const meme = document.getElementById("meme");
-
-
 
 descargaButton.addEventListener("click", () => downloadMeme());
 
@@ -337,6 +305,8 @@ const downloadMeme = () => {
         ;
 };
 
+
+// tamaño de fuente-----------------------
 const tamaño = document.getElementById('number-icon');
 
 
@@ -347,10 +317,10 @@ const tamañoFuente = () => {
 tamaño.addEventListener("input", () => tamañoFuente());
 
 
-// cheked transparente
+// cheked transparente---------------------
 
 const tranparente = document.getElementById('checked-3');
-console.log(tranparente)
+
 
 const tranparerenteCheked = () => {
     if (tranparente.checked) {
@@ -377,7 +347,7 @@ const tranparerenteCheked = () => {
 tranparente.addEventListener('input', () => tranparerenteCheked());
 
 
-// restabecer filtros
+// restabecer filtros--------------------------
 
 const rese = document.getElementById('reset');
 
@@ -385,7 +355,7 @@ rese.addEventListener('click', () => filtros());
 
 
 
-// boton aside text
+// boton aside text-----------------------------
 
 const botonCerrar = document.getElementById('fa-mark');
 
@@ -403,8 +373,7 @@ botonCerrartex.addEventListener('click', () => cerrar());
 const resizeWindow = () => {
 
     if (document.body.getBoundingClientRect().width < 1024) {
-        //    si la condicion se cumple se ejecuta este codigo
-        asideImage.classList.add('hidden');
+       asideImage.classList.add('hidden');
         asideText.classList.add('hidden');
     } else {
         asideImage.classList.remove('hidden');

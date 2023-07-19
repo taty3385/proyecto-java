@@ -984,7 +984,7 @@ input[type='range']::-webkit-slider-thumb {
         width: 100%;
         left: 0%;
         z-index: 3;
-        height: 128%;
+            height: 149%;
     }
 
     input[type='range'] {
@@ -1047,7 +1047,7 @@ input[type='range']::-webkit-slider-thumb {
     .aside-text {
         width: 100%;
         left: 0%;
-        height: 128%;
+        height: 149%;
         ;
     }
 

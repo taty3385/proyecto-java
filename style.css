@@ -94,19 +94,22 @@ body {
     width: 50%;
     position: relative;
     background-color: black;
+
 }
 
 .title {
     box-sizing: border-box;
     background-color: #ffffff;
     text-align: center;
-width: 100%;
+    width: 100%;
     margin: 0;
     padding: 24px;
+    position: static;
+
 }
 
 .container-image {
-   
+
     height: 100%;
     width: 100%;
     flex-grow: 1;
@@ -145,7 +148,7 @@ label {
     width: 17%;
     height: 100%;
     left: 83%;
-   
+
 }
 
 #image {
@@ -180,14 +183,15 @@ label {
 }
 
 
-.superior{
-background-color: #393e49;
-border: none;
-height: 15px;
-padding: 5px;
-width: 90%;
-border-radius: 5px;
+.superior {
+    background-color: #393e49;
+    border: none;
+    height: 15px;
+    padding: 5px;
+    width: 90%;
+    border-radius: 5px;
 }
+
 .inferior {
     background-color: #393e49;
     border: none;
@@ -811,7 +815,7 @@ input[type='range']::-webkit-slider-thumb {
 
     .main {
         height: 100%;
-        justify-content:space-evenly ;
+        justify-content: space-evenly;
     }
 
     .aside-imagen {
@@ -821,11 +825,12 @@ input[type='range']::-webkit-slider-thumb {
     .aside-text {
         height: 115%;
     }
+
     .container-memes {
         width: 81%;
         height: 54%;
-}
     }
+}
 
 
 @media(max-width:820px) {
@@ -939,7 +944,7 @@ input[type='range']::-webkit-slider-thumb {
         margin-top: 2px;
     }
 
-    .superior{
+    .superior {
         padding: 8px;
         WIDTH: 95%;
     }
@@ -1047,10 +1052,11 @@ input[type='range']::-webkit-slider-thumb {
         ;
     }
 
-    .superior{
+    .superior {
         padding: 15px;
         width: 90%;
     }
+
     .inferior {
         padding: 15px;
         width: 90%;
@@ -1132,10 +1138,10 @@ input[type='range']::-webkit-slider-thumb {
 
 }
 
-@media(max-width:412px){
+@media(max-width:412px) {
     .container-memes {
         height: 50%;
-}
+    }
 }
 
 @media(max-width:412px) {
@@ -1152,7 +1158,7 @@ input[type='range']::-webkit-slider-thumb {
 @media(max-width:360px) {
     .container-list {
         width: 100%;
-}
+    }
 
 }
 
@@ -1190,15 +1196,17 @@ input[type='range']::-webkit-slider-thumb {
     #url {
         padding: 13px;
     }
+
     .header-title {
         font-size: 27px;
         height: 7%;
         width: 100%;
         text-align: center;
-}
-.title {
-    width: 97%;
-    padding: 10px;
-}
+    }
+
+    .title {
+        width: 97%;
+        padding: 10px;
+    }
 
 }

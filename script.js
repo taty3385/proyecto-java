@@ -217,11 +217,13 @@ const chekedTexinfe = document.getElementById('checked-2');
 const chekin = () => {
     if (chekedTexSup.checked) {
         textSuperior.classList.add("hidden");
-        textInferior.classList.remove('hidden');
     } else {
+        textSuperior.classList.remove('hidden');
+
     } if (chekedTexinfe.checked) {
         textInferior.classList.add('hidden');
-        textSuperior.classList.remove("hidden");
+    } else {
+        textInferior.classList.remove('hidden');
     }
 
 }
@@ -353,12 +355,10 @@ console.log(tranparente)
 const tranparerenteCheked = () => {
     if (tranparente.checked) {
         textSuperior.style.backgroundColor = 'transparent';
-        textSuperior.style.zIndex= 1 
         textInferior.style.backgroundColor = 'transparent';
-        textInferior.style.zIndex= 1
-        textSuperior.style.color= 'white';
-        textInferior.style.color='white';
-        meme.style.position = 'relative';
+        textSuperior.style.color = 'white';
+        textInferior.style.color = 'white';
+
         textSuperior.style.position = 'absolute';
         textInferior.style.position = 'absolute';
         textSuperior.style.top = "0";
@@ -369,10 +369,6 @@ const tranparerenteCheked = () => {
         textInferior.style.backgroundColor = '#ffffff';
         textSuperior.style.position = 'static';
         textInferior.style.position = 'static';
-        textSuperior.style.color= 'black';
-        textInferior.style.color= 'black';
-
-
     }
 
 }
@@ -408,8 +404,8 @@ const resizeWindow = () => {
         //    si la condicion se cumple se ejecuta este codigo
         asideImage.classList.add('hidden');
         asideText.classList.add('hidden');
-
-
+    } else {
+        asideImage.classList.remove('hidden');
 
     }
 }

@@ -71,8 +71,7 @@ const ocultarText = () => {
     asideText.classList.remove('hidden');
 }
 
-// botonText.addEventListener('click', () => Mostrarpanel());
-// console.log(botonText)
+
 
 // // modo Oscuro------------------------------------
 const botonOscuro = document.getElementById('list-oscuro');
@@ -121,8 +120,6 @@ inputColor2.addEventListener("input", () => color());
 inputColor3.addEventListener("input", () => color());
 
 // cambio de fondo meme
-
-
 
 const cambioColorFondo = () => {
     img.style.backgroundColor = `${inputColor1.value}`
@@ -214,23 +211,25 @@ const left = document.getElementById('left');
 const center = document.getElementById('center');
 const right = document.getElementById('right');
 
-const leftTex = () => {
-    textSuperior.style.textAlign = "left";
-    textInferior.style.textAlign = "left";
-}
-left.addEventListener("click", () => leftTex());
+const buttonAlling = () => {
+    console.log(buttonAlling)
+    if (left) {
+        textSuperior.style.textAlign = "left";
+        textInferior.style.textAlign = "left";
 
-const centerTex = () => {
-    textSuperior.style.textAlign = 'center';
-    textInferior.style.textAlign = 'center';
-}
-center.addEventListener("click", () => centerTex());
+    } else if (center.style.textAlign) {
+        textSuperior.style.textAlign = 'center';
+        textInferior.style.textAlign = 'center'
+    } else if (right.style.textAlign) {
+        textSuperior.style.textAlign = 'right';
+        textInferior.style.textAlign = 'right'
+    }
 
-const rightTex = () => {
-    textSuperior.style.textAlign = 'right';
-    textInferior.style.textAlign = 'right';
 }
-right.addEventListener("click", () => rightTex());
+
+left.addEventListener("click", () => buttonAlling());
+center.addEventListener("click", () => buttonAlling());
+right.addEventListener("click", () => buttonAlling());
 
 // espaciado---------------------------------------
 
@@ -373,7 +372,7 @@ botonCerrartex.addEventListener('click', () => cerrar());
 const resizeWindow = () => {
 
     if (document.body.getBoundingClientRect().width < 1024) {
-       asideImage.classList.add('hidden');
+        asideImage.classList.add('hidden');
         asideText.classList.add('hidden');
     } else {
         asideImage.classList.remove('hidden');

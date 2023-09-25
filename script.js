@@ -89,7 +89,7 @@ const modoOscuro = () => {
     // cambio de nombre de boton modo claro---------------------------
 
     if (header.classList.contains('modo-claro-header')) {
-        botonOscuro.innerText = " 🌅Modo claro";
+        botonOscuro.innerText = " 🌅Modo clar";
     } else {
         botonOscuro.innerHTML = '<i class="fa-regular fa-lightbulb icon"></i> Modo oscuro';
     }
